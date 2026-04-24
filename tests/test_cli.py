@@ -14,10 +14,10 @@ class TestCliHelp:
         """主命令 --help 正常输出"""
         result = runner.invoke(app, ["--help"])
         assert result.exit_code == 0
-        assert "Vbiji" in result.stdout
-        assert "read" in result.stdout
-        assert "ask" in result.stdout
-        assert "batch" in result.stdout
+        assert "Vbiji" in result.output
+        assert "read" in result.output
+        assert "ask" in result.output
+        assert "batch" in result.output
 
     def test_read_help(self):
         """read --help"""
@@ -28,23 +28,23 @@ class TestCliHelp:
         """ask --help"""
         result = runner.invoke(app, ["ask", "--help"])
         assert result.exit_code == 0
-        assert "--prompt" in result.stdout
-        assert "--save" in result.stdout
-        assert "--save-as" in result.stdout
+        assert "--prompt" in result.output
+        assert "--save" in result.output
+        assert "--save-as" in result.output
 
     def test_batch_help(self):
         """batch --help"""
         result = runner.invoke(app, ["batch", "--help"])
         assert result.exit_code == 0
-        assert "--to" in result.stdout
-        assert "--prompt" in result.stdout
-        assert "--llm" in result.stdout
+        assert "--to" in result.output
+        assert "--prompt" in result.output
+        assert "--llm" in result.output
 
     def test_llm_add_help(self):
         """llm-add --help"""
         result = runner.invoke(app, ["llm-add", "--help"])
         assert result.exit_code == 0
-        assert "--max-tokens" in result.stdout
+        assert "--max-tokens" in result.output
 
     def test_prompt_help(self):
         """prompt-* 系列 --help"""

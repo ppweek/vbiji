@@ -1,6 +1,5 @@
 """LLM 配置管理器（Phase 2）"""
 
-import json
 import sqlite3
 from datetime import datetime
 from typing import Optional
@@ -73,7 +72,6 @@ class LlmManager:
             raise ValueError(f"LLM 配置 '{name}' 已存在")
 
         now = datetime.now().isoformat()
-        options = json.dumps({"temperature": temperature, "max_tokens": max_tokens})
 
         conn.execute(
             """

@@ -596,7 +596,7 @@ def batch(
         # 步骤 B：转为目标格式并保存到 vbiji_raw/
         target_content = _convert_to_format(doc.content, ext, to_format)
         if target_content is None:
-            console.print(f"  [yellow]⚠️  跳过（不支持的格式或转换失败）[/yellow]")
+            console.print("  [yellow]⚠️  跳过（不支持的格式或转换失败）[/yellow]")
             results.append({"file": src.name, "status": "skipped", "reason": "格式不支持"})
             continue
 

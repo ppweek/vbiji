@@ -1,6 +1,6 @@
 """统一的 AI 客户端"""
 
-from .providers.base import LlmConfig, ChatMessage
+from .providers.base import LlmConfig
 from .providers.deepseek import DeepSeekProvider
 from .providers.minimax import MiniMaxProvider
 from .providers.kimi import KimiProvider
