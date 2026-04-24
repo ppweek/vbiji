@@ -34,8 +34,8 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: uv pip install -e . --group dev
+      - name: Sync dependencies
+        run: uv sync --dev --python ${{ matrix.python-version }}
 
       - name: Type check with mypy
         run: uv run mypy vbiji/ --ignore-missing-imports --no-error-summary || true
@@ -63,8 +63,8 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: uv pip install -e . --group dev
+      - name: Sync dependencies
+        run: uv sync --dev --python ${{ matrix.python-version }}
 
       - name: Run pytest with coverage
         run: uv run pytest tests/ -v --cov=vbiji --cov-report=xml --cov-report=term
@@ -92,12 +92,13 @@ jobs:
         uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: 'pyproject.toml'
 
       - name: Set up Python
         run: uv python install 3.12
 
-      - name: Install dependencies
-        run: uv pip install -e . --group dev
+      - name: Sync dependencies
+        run: uv sync --dev --python 3.12
 
       - name: Download coverage reports
         uses: actions/download-artifact@v4
