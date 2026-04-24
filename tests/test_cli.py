@@ -4,7 +4,7 @@ import pytest
 from typer.testing import CliRunner
 from vbiji.cli import app
 
-runner = CliRunner()
+runner = CliRunner(env={"TERM": "dumb"})
 
 
 class TestCliHelp:
