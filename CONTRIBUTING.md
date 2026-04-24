@@ -5,7 +5,7 @@
 ## 开发环境
 
 ```bash
-git clone https://github.com/your-org/vbiji.git
+git clone https://github.com/ppweek/vbiji.git
 cd vbiji
 uv sync --dev
 ```

@@ -20,5 +20,5 @@ assignees: ''
 
 ## 附加信息
 - 当前 Vbiji 版本: [e.g. 0.1.0]
-- 是否已查阅 [已有 Issue](https://github.com/your-org/vbiji/issues)？[是/否]
+- 是否已查阅 [已有 Issue](https://github.com/ppweek/vbiji/issues)？[是/否]
 - 优先级（你主观判断）：[P1 重要 / P2 一般 / P3 可选]
