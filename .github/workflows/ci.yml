@@ -35,7 +35,7 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Sync dependencies
-        run: uv sync --dev --python ${{ matrix.python-version }}
+        run: uv sync --dev --python ${{ matrix.python-version }} --refresh
 
       - name: Type check with mypy
         run: uv run mypy vbiji/ --ignore-missing-imports --no-error-summary || true
@@ -64,7 +64,7 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Sync dependencies
-        run: uv sync --dev --python ${{ matrix.python-version }}
+        run: uv sync --dev --python ${{ matrix.python-version }} --refresh
 
       - name: Run pytest with coverage
         run: uv run pytest tests/ -v --cov=vbiji --cov-report=xml --cov-report=term
@@ -98,7 +98,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Sync dependencies
-        run: uv sync --dev --python 3.12
+        run: uv sync --dev --python 3.12 --refresh
 
       - name: Download coverage reports
         uses: actions/download-artifact@v4
