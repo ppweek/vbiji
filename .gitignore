@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+dist/
+build/
+uv.lock              # 依赖范围由 pyproject.toml 声明，各自 uv sync 生成即可
+
+# Node.js
+node_modules/
+.playwright/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*~
+
+# 数据库（运行时生成，每次启动可能不同）
+*.db
+.vbiji/
+
+# 日志
+*.log
+
+# 环境变量
+.env
+.env.local
+
+# 测试固件（如果包含敏感内容）
+# tests/fixtures/
